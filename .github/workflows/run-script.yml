@@ -5,6 +5,9 @@ on:
     - cron: "0 0 * * *"
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   run-script:
     runs-on: ubuntu-latest
@@ -35,9 +38,3 @@ jobs:
           git add images/output/imagen_final.jpg
           git commit -m "Actualizar imagen del versiculo" || echo "No hay cambios"
           git push
-
-      - name: Instalar modelo de traducción
-        run: python utils/instalar_paquetes.py
-
-      - name: Ejecutar script
-        run: python main.py
