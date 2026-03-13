@@ -22,5 +22,8 @@ jobs:
         run: |
           pip install -r requirements.txt
 
+      - name: Instalar modelo de traducción
+        run: python utils/instalar_paquetes.py
+
       - name: Ejecutar script
         run: python main.py
