@@ -27,3 +27,17 @@ jobs:
 
       - name: Ejecutar script
         run: python main.py
+
+      - name: Commit imagen generada
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add images/output/imagen_final.jpg
+          git commit -m "Actualizar imagen del versiculo" || echo "No hay cambios"
+          git push
+
+      - name: Instalar modelo de traducción
+        run: python utils/instalar_paquetes.py
+
+      - name: Ejecutar script
+        run: python main.py
