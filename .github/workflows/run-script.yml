@@ -36,5 +36,6 @@ jobs:
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
           git add images/output/imagen_final.jpg
+          git add save/estado.json
           git commit -m "Actualizar imagen del versiculo" || echo "No hay cambios"
           git push
